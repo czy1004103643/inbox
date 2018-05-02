@@ -1,0 +1,63 @@
+.inbox-content{
+	width: 750px;
+	margin: 20px auto 20px;
+	background: #FFF;
+	box-shadow: 0 0 1px rgba(0,0,0,.3);
+	border-radius: 2px;
+}
+.inbox-header{
+	color: #FFF;
+	padding: 20px 0;
+	position: relative;
+	border-radius: 2px 2px 0 0;
+	font-size: 30px;
+	font-weight: 700;
+	line-height: 50px;
+	word-break: break-all;
+}
+.inbox-logo{
+	position: relative;
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	overflow: hidden;
+}
+.inbox-title{
+	display: inline-block;
+}
+.inbox-body{
+	padding: 20px 40px;
+	margin: 0 20px 0 20px;
+	min-height: 200px;
+	overflow-x: hidden;
+	position: relative;
+	font-family: "lucida grande", "lucida sans unicode", "lucida", "Helvetica Neue", "helvetica", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "sans-serif";
+	line-height: 30px;
+	font-size: 16px;
+	text-shadow: 1px 1px 1px #FFF;
+}
+
+.line-post {
+    border-bottom: 1px solid #DDD;
+    font-size: 0;
+    height: 1px;
+    text-align: center;
+    position: relative;
+    overflow: visible;
+    margin: 20px 0;
+}
+
+.line-post .line-post-block {
+    display: inline-block;
+    border-radius: 18px;
+    border: 1px solid #DDD;
+    padding: 5px 40px;
+    position: absolute;
+    top: -17px;
+    left: 50%;
+    margin-left: -89px;
+    font-size: 15px;
+    background: #FFF;
+    color: #FFF;
+    font-weight: bold;
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	 <!-- 开启动态方法 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+	<constant name="struts.action.excludePattern" value="/ws/.*,ws://.*"></constant>
+	
+	<!-- 文件上传最大值 -->
+	<constant name="struts.multipart.maxSize" value="1048576000" />
+	<!-- 文件上传临时目录 -->
+	<!-- <constant name="struts.multipart.saveDir" value="e:/src/tempUpload/" /> -->
+	<!-- 文件上传paeser -->
+	<constant name="struts.multipart.paeser" value="cos"></constant>
+	<package name="userPackage" namespace="/" extends="struts-default">
+		<action name="user" class="userAction">
+			<!-- 上传 -->
+			<interceptor-ref name="fileUpload">
+				<!-- 文件过滤 -->
+				<param name="allowedTypes">image/bmp,image/png,image/gif,image/jpeg</param>
+				<!-- 图片不能大于5M -->
+                <param name="maximumSize">5242880</param>
+			</interceptor-ref>
+			<!-- 默认拦截器必须放在fileUpload之后，否则无效 -->
+			<interceptor-ref name="defaultStack" />
+		</action>
+		
+		<action name="inbox" class="inboxAction">
+			<!-- 上传 -->
+			<interceptor-ref name="fileUpload">
+				<!-- 文件过滤 -->
+				<param name="allowedTypes">image/bmp,image/png,image/gif,image/jpeg</param>
+				<!-- 文件不能大于50M -->
+                <param name="maximumSize">5242880</param>
+			</interceptor-ref>
+			<!-- 默认拦截器必须放在fileUpload之后，否则无效 -->
+			<interceptor-ref name="defaultStack" />
+		</action>
+		
+		<action name="doc" class="docAction">
+			
+		</action>
+		<action name="download" class="com.test.action.DownloadAction">
+			<result type="stream">
+				<param name="contentType"></param>
+				<param name="inputName">inStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+			</result>
+		</action>
+	</package>
+	
+	
+</struts>

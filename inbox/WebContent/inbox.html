@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" type="text/css"
+	href="js/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="js/bootstrap-fileinput-master20161101/css/fileinput.min.css" />
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<link rel="stylesheet" type="text/css" href="css/inbox.css" />
+<link rel="stylesheet" href="js/layer/skin/default/layer.css" />
+</head>
+<body>
+	<div class="inbox-content clearfix">
+		<!--头开始-->
+		<div class="inbox-header text-center" style="background: #178FE5;">
+			<div class="inbox-logo"></div>
+			<div>
+				<div class="inbox-title"></div>
+			</div>
+		</div>
+		<!--头结束-->
+		<!--收件简介开始-->
+		<div class="inbox-body clearfix">
+			<div style="min-height: 100px;" id="remark"></div>
+		</div>
+		<!--收件简介结束-->
+		
+		<!--密码框开始-->
+		<div class="inbox-body clearfix" id="pwdText" style="display:none">
+			<div style="min-height: 100px;">
+
+				<div class="form-group">
+
+					<div class="col-sm-10">
+						<input type="password" class="form-control" id="password" placeholder="请输入密码" />
+					</div>
+					<div class="col-sm-2">
+						<input type="button" value="提交" class="btn-success" onclick="checkPassword()"/>
+					</div>
+				</div>
+
+			</div>
+		</div>
+			<!--密码框结束-->
+		
+		<!--文件上传区域开始-->
+		<div class="inbox-footer">
+			<div class="line-post">
+				<span class="line-post-block" style="background: #178FE5;">文件提交区域</span>
+			</div>
+			<form enctype="multipart/form-data" method="POST">
+				<div class="form-group">
+					<input id="file-upload" type="file" multiple name="uploadFile">
+				</div>
+			</form>
+		</div>
+		<!--文件上传区域结束-->
+
+	</div>
+</body>
+<script src="js/jquery-1.11.2.min.js" type="text/javascript"
+	charset="utf-8"></script>
+<script src="js/bootstrap-fileinput-master20161101/js/fileinput.js"
+	type="text/javascript" charset="utf-8"></script>
+<script src="js/bootstrap/js/bootstrap.min.js" type="text/javascript"
+	charset="utf-8"></script>
+<script src="js/layer/layer.js"></script>
+<script src="js/bootstrap-fileinput-master20161101/js/locales/zh.js"
+	type="text/javascript" charset="utf-8"></script>
+<script src="js/inbox.js" type="text/javascript" charset="utf-8"></script>
+</html>

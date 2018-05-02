@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans 
+  		http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+	<!-- action->(user,service->dao) -->
+	<bean id="userDao" class="com.test.dao.impl.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="userService" class="com.test.service.impl.UserServiceImpl">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	<bean id="userAction" class="com.test.action.UserAction">
+		<property name="userService" ref="userService"></property>
+	</bean>
+	<!-- action->(inbox,service->dao) -->
+	<bean id="inboxDao" class="com.test.dao.impl.InboxDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="inboxService" class="com.test.service.impl.InboxServiceImpl">
+		<property name="inboxDao" ref="inboxDao"></property>
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	<bean id="inboxAction" class="com.test.action.InboxAction">
+		<property name="inboxService" ref="inboxService"></property>
+	</bean>
+	
+	<!-- action->(doc,service->dao) -->
+	<bean id="docDao" class="com.test.dao.impl.DocDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="docService" class="com.test.service.impl.DocServiceImpl">
+		<property name="docDao" ref="docDao"></property>
+		<property name="fileHashDao" ref="fileHashDao"></property>
+	</bean>
+	<bean id="docAction" class="com.test.action.DocAction">
+		<property name="docService" ref="docService"></property>
+	</bean>
+	<!-- action->(FileHash,service->dao) -->
+	<bean id="fileHashDao" class="com.test.dao.impl.FileHashDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+</beans>

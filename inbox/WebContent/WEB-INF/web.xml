@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>inbox</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:applicationContext*.xml</param-value>
+  </context-param>
+  
+ 
+  
+   <filter>
+		<filter-name>OpenSessionInViewFilter</filter-name>
+		<!-- 把一个Hibernate Session和一次完整的请求过程对应的线程相绑定。 目的是为了实现"Open Session in View"的模式。 
+			例如： 它允许在事务提交之后延迟加载显示所需要的对象 -->
+		<filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>OpenSessionInViewFilter</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+  
+  <filter>
+		<!-- 定义核心Filter的名字 -->
+		<filter-name>struts2</filter-name>
+		<!-- 定义核心Filter的实现类 -->
+		<filter-class>
+			org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+	<!-- FilterDispatcher用来初始化Strutss2 并处理所有的Web请求 -->
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+    
+    <!--登录过滤器 防止未登录用户直接访问JSP界面  -->
+	  <filter>
+	  	<filter-name>LoginFilter</filter-name>
+	  	<filter-class>com.test.filter.LoginFilter</filter-class>
+	  	<init-param>
+	  		<param-name>excludePages</param-name>
+	  		<param-value>/index.jsp,/login.jsp,/register.jsp</param-value>
+	  	</init-param>
+	  </filter>
+	  <filter-mapping>
+	  		<filter-name>LoginFilter</filter-name>
+	  		<url-pattern>*.jsp</url-pattern>
+	  </filter-mapping>
+    
+    
+    
+     <!-- spring配置,ContextLoaderListener监听器的作用就是启动Web容器时， 自动装配ApplicationContext的配置信息 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+  
+</web-app>
+

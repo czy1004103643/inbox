@@ -1,0 +1,141 @@
+.toolbar{
+	position: relative;
+	color: #bbbbbb;
+	margin-bottom: 15px;
+	line-height: 36px;
+}
+.set-btn-right{
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.btn-set{
+	color: #20A286;
+	border-color: #20A286;
+}
+.btn-set:hover,.btn-set:active{
+	background: #20A286;
+	color: #FFF;
+}
+.btn-outline {
+    background-color: transparent;
+    box-shadow: none;
+    text-shadow: none;
+}
+.inboxs-group{
+	list-style: none;
+	padding-left: 0;
+	margin-top: 10px;
+}
+.inbox{
+	background: white;
+	font-size: 18px;
+	min-height: 62px;
+	line-height: 17px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	clear: both;
+	box-sizing: border-box;
+	padding: 10px;
+	margin: 0 -10px;
+	border-radius: 3px;
+	position: relative;
+	overflow: hidden;
+}
+.inbox:hover{
+	background: #fcf5e2;
+}
+.upvote {
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    width: 48px;
+    height: 42px;
+    text-align: center;
+    cursor: pointer;
+    background: url(../img/upvote.png) no-repeat center;
+}
+.upvote .vote-count {
+    display: block;
+    line-height: 48px;
+    overflow: hidden;
+    color: #BBB;
+    -webkit-transition: color, 0.1s, ease-in;
+    -moz-transition: color, 0.1s, ease-in;
+    transition: color, 0.1s, ease-in;
+}
+.upvote:hover .vote-count {
+    color: #20A286;
+}
+.inbox .inbox-msg{
+	padding-left: 62px;
+	padding-right: 160px;
+	box-sizing: border-box;
+}
+.inbox .inbox-msg .title{
+	text-decoration: none;
+	color: #534540;
+	font-size: 16px;
+	margin: 6px 2px 0 0px;
+	line-height: 20px;
+}
+.inbox .inbox-msg .title:hover{
+	color: #20A286;
+}
+.inbox .inbox-msg .description{
+	color: #999999;
+	font-size: 12px;
+	margin: 5px 0 0 0px;
+	display: block;
+	line-height: 20px;
+}
+.inbox .inbox-msg .description span{
+	margin-left: 10px;
+}
+.inbox-actions{
+	color: #bbbbbb;
+	font-size: 16px;
+	line-height: 19px;
+	margin: 6px 0 0;
+	right: 10px;
+	position: absolute;
+	top: 18px;
+}
+
+.inbox-actions .glyphicon{
+	padding: 5px;
+	color: #999;
+}
+.inbox-actions .glyphicon:hover{
+	color: #20A286;
+}
+
+.config-menu{
+	padding: 0 0;
+}
+.config-menu li{
+	line-height: 200%;
+	height: 32px;
+	margin: 2px 0;
+}
+.config-menu li>a{
+	display: block;
+	cursor: pointer;
+	color: #333;
+	padding: 2px 15px;
+	font-size: 14px;
+}
+.config-menu li>a:hover{
+	text-decoration: none;
+	background-color: #f2f2ea;
+	border-radius: 3px;
+	color: green;
+}
+.config-menu li.divider{
+	border: 0;
+	border-top: solid 1px #e1e1e1;
+	border-bottom: solid 1px #fff;
+	margin: 5px 0;
+	line-height: 200%;
+	height: 2px;
+}

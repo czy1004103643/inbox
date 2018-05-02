@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-12-21 17:54:37 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.test.model.Inbox" table="inbox">
+    	<!-- 基本属性 -->
+    	<id name="id" column="id">
+    		<generator class="uuid"></generator>
+    	</id>
+        <property name="title" column="title" type="string" not-null="true"></property>
+        <property name="logo" column="logo" type="string"></property>
+        <property name="remark" column="remark" type="text" not-null="true"></property>
+    	<property name="createTime" column="createTime" type="timestamp" not-null="true"></property>
+    	<property name="endTime" column="endTime" type="timestamp" not-null="true"></property>
+    	<property name="star" column="star" type="int" not-null="true"></property>
+    	<property name="status" column="status" type="int" not-null="true"></property>
+    	<property name="password" column="password" type="string"></property>
+    	<property name="closeReason" column="closeReason" type="string"></property>
+    	<!-- 关联映射 多对一 -->
+		<many-to-one name="user" class="com.test.model.User"
+			lazy="false" fetch="join">
+			<column name="userId"></column>
+		</many-to-one>
+		
+		<!-- 一对多 -->
+		<set name="docs" inverse="true" lazy="false" fetch="join" cascade="all">
+    		<key column="inboxId"></key>
+    		<one-to-many class="com.test.model.Doc" />
+    	</set>
+    </class>
+</hibernate-mapping>
