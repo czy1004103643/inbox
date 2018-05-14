@@ -7,7 +7,7 @@ import java.util.Properties;
 
 
 /**
- * 读取配置文件 
+ * 读取配置文件 123
  * @author lenovo
  *
  */
