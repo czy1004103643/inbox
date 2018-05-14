@@ -6,7 +6,11 @@ import java.io.InputStream;
 import java.util.Properties;
 
 
-
+/***
+ * 主分支 修改注释 这个是读取配置的类
+ * @author lenovo
+ *
+ */
 public class Config {
 	private static String fileNamePath ="config.properties";
 	
