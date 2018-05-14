@@ -6,5 +6,5 @@ package com.test.util;
  *
  */
 public class Test {
-	
+	private int id; //测试1 修改文件内容 添加了一个id属性  用GIT命令行 和 eclipse分别来实现
 }
