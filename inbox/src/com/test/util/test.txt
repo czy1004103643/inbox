@@ -1,11 +1,6 @@
 现在是主分支master来进行添加文件内容
 master gogogo
-哈哈 我也在修改一次 嘿嘿
-master gogogo
-DEV IS IS IS IS COOL.
-master gogogo
-DEV IS IS IS IS COOL.
-master gogogo
-DEV IS IS IS IS COOL.
-2018-5-14 15:51:58
-我也修改了 嘿嘿
+
+2018-5-15 13:52:47 
+
+修改这个文件内容
